@@ -44,7 +44,7 @@ e.g. for Golemagg:
 local _, t = ...
 t.addon_name = "Cutpurse-GolemaggEU"
 t.my_realm = "Golemagg"
-t.my_provider = "GolemaggEU Discord"
+t.my_provider = "Golemagg EU Discord"
 t.my_description = "Cutpurse list of scammers curated by the Golemagg EU discord."
 t.my_url = "https://discord.gg/golemagg"
 ```
@@ -58,29 +58,7 @@ e.g.
 `list.lua`
 ```lua
 local _, t = ...
-
 t.case_table = {
-    [0] = {
-        -- These fields are always required. The case will be ignored by
-        -- Cutpurse without them.
-        name = "Thrall",  -- The last known name of the listed toon.
-        url = "https://discord.com/channels/some_discord/channel1",  -- A URL to the evidence against this player.
-
-        -- It is required to have ONE OF category or description, but 
-        -- including both is very helpful for users to tailor their alerts.
-        description = "Stole all the gold from a gdkp.",  -- A short verbal description of the case and offence.
-        category = "gdkp",  -- A category, should be one of "dungeon", "raid", "trade", "gdkp", "harassment"
-                            -- If the given category is none of these, it will be ignored.
-
-        -- These fields are optional.
-        guid = "Player-some-guidabc",   -- The GUID of the player. This is a more powerful identifier than the toon's name,
-                                        -- and persists through most types of reroll.
-        aliases = {"Warchief"},  -- a list of the previous aliases this player has gone under.
-        class = "WARRIOR",  -- The unit class, in allcaps english, no spaces, sometimes called the classFilename.
-                            -- See https://wowpedia.fandom.com/wiki/API_UnitClass for more info.
-
-    },
-
     -- The below are all valid configurations.
     [1] = {
         name = "Arthas",
@@ -94,13 +72,27 @@ t.case_table = {
     [2] = {
         name = "Sylvanas",
         category = "harassment",
+        faction = "Horde",
         url = "https://some_other_url.com/war_of_the_thorns",
     },
 
     [3] = {
         name = "Gallywix",
-        category = "trade",
         description = "Did not honor payment for boat travel services.",
         url = "https://www.wowhead.com/guide/story-goblin-starting-area-lore",
     },
 ```
+
+The required fields for each case are:
+- `name`: the name of the scammer.
+- `url`: a link to the url of the evidence against them, usually a thread/message/channel on discord.
+
+At least *one of* the following two are additionally required.
+- `description`: a short description of the incident, what type of scam was perpetrated, etc.
+- `category`: a category, should be one of "dungeon", "raid", "trade", "gdkp", "harassment". If none of these, is ignored.
+  
+The following fields are optional, and can help Cutpurse better track scammers, and help your users tailor their experience using the addon more closely:
+- `guid`: the player's GUID. This is *highly recommended* to include, as paid name changes retain the same GUID. This will also stop a false-positive from pinging if a scammer renames and someone else takes up the now-vacant name.
+- `class`: the player's class, in allcaps, no spaces English, e.g. DRUID, DEATHKNIGHT, WARLOCK etc. For more info see: https://wowpedia.fandom.com/wiki/API_UnitClass
+- `faction` - the player's faction. "Horde" or "Alliance".
+- `aliases` - an array of the previous names the scammer has gone under.
