@@ -7,14 +7,14 @@ local _, t = ...
 -- folder and the same name as in your Table of Contents (.toc) file!
 t.addon_name = "Cutpurse-TestList"
 
--- Set this variable to whatever realm your list is for.
--- e.g. Golemagg, Firemaw, Gehennas etc.
-t.my_realm = "Classic PTR Realm 1"
-
 -- Set this variable to the name of your organisation, usually the name of your
 -- Discord.
 -- e.g. "Golemagg EU Discord"
 t.my_provider = "Cutpurse Discord"
+
+-- Set this variable to whatever realm your list is for.
+-- e.g. Golemagg, Firemaw, Gehennas etc.
+t.my_realm = "Classic PTR Realm 1"
 
 -- Set this variable to be the name of your list, can just be set to the name of
 -- your organisation if you only curate a single list.

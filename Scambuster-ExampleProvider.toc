@@ -1,0 +1,12 @@
+## Interface: 30400
+## Title: Scambuster-ExampleProvider
+## Notes: Example Provider addon for Scambuster
+## Author: Swedge
+## Version: 1.0.0
+## DefaultState: enabled
+## Dependencies: Scambuster
+
+LibStub.lua
+settings.lua
+list.lua
+core.lua

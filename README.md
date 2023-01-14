@@ -1,12 +1,13 @@
-# Cutpurse-TestList
-A test list for Cutpurse, showing how to curate your own blocklist via an extension addon for Cutpurse.
+# Scambuster-ExampleProvider
+An example provider addon that extends Scambuster with data.
 
-## How to use this template to extend Cutpurse
+## How to use this template to extend Scambuster
 
-First, clone the contents of this repository into a new repository, preferably "Cutpurse-[somename]", e.g. Cutpurse-GolemaggEU.
-Then there are three files that need tweaks.
+First, clone the contents of this repository into a new repository, preferably "Scambuster-[somename]", e.g. Scambuster-Golemagg.
 
-### Table of Contents (toc) file.
+Then there are three files that need configured.
+
+### 1. Table of Contents (.toc) file
 
 The WoW table of contents files have a strict requirement that your addon's root folder must be the same as the addon's name in the toc file.
 
