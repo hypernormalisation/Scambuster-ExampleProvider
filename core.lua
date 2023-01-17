@@ -4,7 +4,7 @@
 local _, t = ...
 local provider_table = {
     name = t.my_name,
-    provider = t.my_provider, -- organisation name
+    provider = t.my_provider,
     description = t.my_description,
     url = t.my_url,
     realm_data = {
